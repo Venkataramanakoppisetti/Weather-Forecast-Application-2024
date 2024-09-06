@@ -1,0 +1,41 @@
+.cities-table {
+    background-color: #F4F4F9;
+    padding: 20px;
+  }
+
+.heading {
+  text-align: center;
+  color: #3498DB;
+}
+  
+  .cities-table input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .cities-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .cities-table th, .cities-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .cities-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .table-data {
+    text-align: center;
+    color: #333333;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .table-header {
+    color: #00796B;
+    font-size: 20px;
+  }
