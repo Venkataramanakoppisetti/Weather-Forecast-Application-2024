@@ -1,6 +1,4 @@
-// api.js
-// api.js
-// api.js
+
 const BASE_URL = 'https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/geonames-all-cities-with-a-population-1000/records?';
 
 export const fetchCities = async (offset = 0, limit = 20, query = '') => {
@@ -12,10 +10,10 @@ export const fetchCities = async (offset = 0, limit = 20, query = '') => {
     }
     const data = await response.json();
     console.log('Fetched cities data:', data);
-    return data.results || []; // Return the 'results' array
+    return data.results || []; 
   } catch (error) {
     console.error('Error fetching cities:', error);
-    return []; // Return an empty array in case of error
+    return [];
   }
 };
 
@@ -29,7 +27,7 @@ export const fetchWeather = async (city) => {
   const apiKey = 'b7f27977458adb50d6075c0c6bcc3cd1';
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${apiKey}&units=metric`;
 
-  console.log('Fetching weather data from:', url); // Debug URL
+  console.log('Fetching weather data from:', url); 
 
   try {
     const response = await fetch(url);

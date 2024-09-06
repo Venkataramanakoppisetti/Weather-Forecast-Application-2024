@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Autosuggest from 'react-autosuggest';
 import { fetchCities } from '../../api';
+import { Bars } from 'react-loader-spinner';
 import './index.css';
 
 const getSuggestions = (value, cities) => {
@@ -104,11 +105,13 @@ const CitiesTable = () => {
         <tbody>
           {cities.length === 0 ? (
             <tr>
-              <td colSpan="3">No data available</td>
+              <div className='no-data-container'>
+                <img className='no-data' src='https://res.cloudinary.com/dyhrvktyr/image/upload/v1725627054/no_data_image_bwoxu4.avif' alt='no data' />
+              </div>
             </tr>
           ) : (
             cities.map(city => (
-              <tr key={city.geoname_id}> {/* Use geoname_id as key */}
+              <tr key={city.geoname_id}> 
                 <td className='table-data'>
                   <Link to={`/weather/${city.name}`} target="_blank">{city.name}</Link>
                 </td>
@@ -119,7 +122,9 @@ const CitiesTable = () => {
           )}
         </tbody>
       </table>
-      {loading && <p>Loading...</p>}
+      {loading && <div className="spinner-container">
+          <Bars color="#00BFFF" height={50} width={50} />
+        </div>}
     </div>
   );
 };

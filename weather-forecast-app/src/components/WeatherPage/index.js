@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { fetchWeather } from '../../api';
 import BackButton from '../../components/BackButton';
-import { Bars } from 'react-loader-spinner'; // Import the spinner from react-loader-spinner
+import { Bars } from 'react-loader-spinner'; 
 import './index.css';
 
 const WeatherPage = () => {
-  const { city } = useParams(); // Retrieve city parameter from URL
+  const { city } = useParams(); 
   const [weather, setWeather] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -20,7 +20,7 @@ const WeatherPage = () => {
         }
 
         setLoading(true);
-        const data = await fetchWeather(city); // Fetch weather using city name
+        const data = await fetchWeather(city); 
         console.log('Fetched weather data:', data);
         setWeather(data);
       } catch (error) {

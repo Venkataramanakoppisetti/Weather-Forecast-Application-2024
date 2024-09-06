@@ -39,3 +39,15 @@
     color: #00796B;
     font-size: 20px;
   }
+
+  .no-data-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .no-data {
+    height: 300px;
+    width:300px;
+    margin: auto;
+  }
